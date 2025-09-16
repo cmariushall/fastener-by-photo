@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Diagnostics() {
   const [ping, setPing] = useState('checking...');
@@ -29,7 +30,7 @@ export default function Diagnostics() {
       <p>API health: <strong>{ping}</strong></p>
       <button onClick={doEcho} style={{ padding: '8px 12px', marginTop: 12 }}>POST /api/echo</button>
       <pre style={{ background:'#f6f6f6', padding:12, marginTop:12, overflow:'auto' }}>{echo}</pre>
-      <p style={{marginTop:24}}><a href="/">← Back to Home</a></p>
+      <p style={{marginTop:24}}><Link href="/">← Back to Home</Link></p>
     </main>
   );
 }
